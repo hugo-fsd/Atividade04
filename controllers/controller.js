@@ -84,16 +84,16 @@ exports.registar = async (req, res) => {
       req.body.email,
       process.env.ACCESS_TOKEN_SECRET
     )
-    const URLconfirm = `http://localhost:8080/api/gpus/auth/confirm/${confirmationToken}`
+    const URLconfirm = `https://atividade04api.herokuapp.com/api/gpus/auth/confirm/${confirmationToken}`
 
-    console.log(`\n\n\nCONFIRMATION LINK -> http://localhost:8080/api/gpus/auth/confirm/${confirmationToken}\n\n\n`)
+    console.log(`\n\n\nCONFIRMATION LINK -> https://atividade04api.herokuapp.com/api/gpus/auth/confirm/${confirmationToken}\n\n\n`)
 
     db.Crud_registar(email, password, confirmationToken) // C: Create
       .then((dados) => {
         enviaEmail(email, URLconfirm).catch(console.error);
         res.status(201).send({
           message:
-            `http://localhost:8080/api/gpus/auth/confirm/${confirmationToken}\n\n\n`,
+            `https://atividade04api.herokuapp.com/api/gpus/auth/confirm/${confirmationToken}\n\n\n`,
         });
         console.log("Controller - utilizador registado: ");
         console.log(JSON.stringify(dados)); // para debug

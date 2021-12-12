@@ -1,4 +1,4 @@
-const urlBase = "http://localhost:8080/api/gpus";
+const urlBase = "https://atividade04api.herokuapp.com/api/gpus";
 const modalLogin = document.getElementById("btnModalLogin");
 const bsModalLogin = new bootstrap.Modal(
   modalLogin,
