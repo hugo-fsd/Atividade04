@@ -86,7 +86,7 @@ exports.registar = async (req, res) => {
     )
     const URLconfirm = `https://atividade04api.herokuapp.com/api/gpus/auth/confirm/${confirmationToken}`
 
-    console.log(`\n\n\nCONFIRMATION LINK -> https://atividade04api.herokuapp.com/api/gpus/auth/confirm/${confirmationToken}\n\n\n`)
+    // console.log(`\n\n\nCONFIRMATION LINK -> https://atividade04api.herokuapp.com/api/gpus/auth/confirm/${confirmationToken}\n\n\n`)
 
     db.Crud_registar(email, password, confirmationToken) // C: Create
       .then((dados) => {
