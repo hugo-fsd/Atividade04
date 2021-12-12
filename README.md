@@ -1,6 +1,6 @@
 # Atividade04
  
-Web scrapping API integrado com frontend.
+Web scrapping API integrado com frontend e sistema de Login/Registo.
 
 Toda a informação esta apresentada no website e o user não tem de fazer nada para aceder à mesma. 
 
