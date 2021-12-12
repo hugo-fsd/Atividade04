@@ -31,12 +31,12 @@ exports.cRud_login = (email) => {
       },
       (err, user) => {
         if (err) {
-          reject({ msg: "Problemas na base de dados!" });
+          reject({ msg: "Problems in database!" });
         } else {
           if (user == null) {
-            reject({ msg: "Utilizador inexistente!" });
+            reject({ msg: "User doens't exist!" });
           } else if (user.confirm != 1) {
-            reject({ msg: "Ativação pendente. Verifique seu email!" });
+            reject({ msg: "Authentication pending. Verify your email!" });
           } else {
             resolve(user);
           }

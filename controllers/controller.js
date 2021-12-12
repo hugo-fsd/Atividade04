@@ -61,7 +61,7 @@ async function enviaEmail(recipients, URLconfirm) {
 exports.verificaUtilizador = async (req, res) => {
   const confirmationCode = req.params.confirmationCode;
   db.crUd_ativar(confirmationCode);
-  const resposta = { message: "O utilizador está ativo!" };
+  const resposta = { message: "User is active!" };
   console.log(resposta);
   return res.send(resposta);
 };
@@ -69,10 +69,10 @@ exports.verificaUtilizador = async (req, res) => {
 
 // REGISTAR - cria um novo utilizador
 exports.registar = async (req, res) => {
-  console.log("Registar novo utilizador");
+  console.log("Register new User");
   if (!req.body) {
     return res.status(400).send({
-      message: "O conteúdo não pode ser vazio!",
+      message: "Can't be empty!",
     });
   }
   try {
@@ -90,13 +90,13 @@ exports.registar = async (req, res) => {
         enviaEmail(email, URLconfirm).catch(console.error);
         res.status(201).send({
           message:
-            "Utilizador criado com sucesso, confira sua caixa de correio para ativar!",
+            "User created successfully, check your email in order to activate account!",
         });
         console.log("Controller - utilizador registado: ");
         console.log(JSON.stringify(dados)); // para debug
       });
   } catch {
-    return res.status(400).send({ message: "Problemas ao criar utilizador" });
+    return res.status(400).send({ message: "Problems creating user" });
   }
 };
 
@@ -122,7 +122,7 @@ exports.login = async (req, res) => {
         console.log(JSON.stringify(dados)); // para debug
       } else {
         console.log("Password incorreta");
-        return res.status(401).send({ erro: "A senha não está correta!" });
+        return res.status(401).send({ erro: "Password incorrect!" });
       }
     })
     .catch((response) => {
