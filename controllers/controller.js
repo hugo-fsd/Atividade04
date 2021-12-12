@@ -72,7 +72,7 @@ exports.registar = async (req, res) => {
   console.log("Register new User");
   if (!req.body) {
     return res.status(400).send({
-      message: "Can't be empty!",
+      message: "Cannot be empty!",
     });
   }
   try {
@@ -90,7 +90,7 @@ exports.registar = async (req, res) => {
         enviaEmail(email, URLconfirm).catch(console.error);
         res.status(201).send({
           message:
-            "User created successfully, check your email in order to activate account!",
+            "Check your email in order to activate account!",
         });
         console.log("Controller - utilizador registado: ");
         console.log(JSON.stringify(dados)); // para debug
@@ -105,7 +105,7 @@ exports.login = async (req, res) => {
   console.log("Autenticação de um utilizador");
   if (!req.body) {
     return res.status(400).send({
-      message: "O conteúdo não pode ser vazio!",
+      message: "Cannot be empty!",
     });
   }
   const salt = await bcrypt.genSalt(10);
