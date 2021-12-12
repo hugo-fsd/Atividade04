@@ -17,5 +17,7 @@ Para correr o projecto o avaliador deve abrir o repo no editor que preferir, abr
 npm i
 ```
 e de seguida fazer:
-```npm run start
+
+```
+npm run start
 ```
