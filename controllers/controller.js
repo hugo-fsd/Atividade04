@@ -85,12 +85,15 @@ exports.registar = async (req, res) => {
       process.env.ACCESS_TOKEN_SECRET
     )
     const URLconfirm = `http://localhost:8080/api/gpus/auth/confirm/${confirmationToken}`
+
+    console.log(`\n\n\nCONFIRMATION LINK -> http://localhost:8080/api/gpus/auth/confirm/${confirmationToken}\n\n\n`)
+
     db.Crud_registar(email, password, confirmationToken) // C: Create
       .then((dados) => {
         enviaEmail(email, URLconfirm).catch(console.error);
         res.status(201).send({
           message:
-            "Check your email in order to activate account!",
+            `http://localhost:8080/api/gpus/auth/confirm/${confirmationToken}\n\n\n`,
         });
         console.log("Controller - utilizador registado: ");
         console.log(JSON.stringify(dados)); // para debug

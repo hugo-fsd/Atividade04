@@ -30,11 +30,6 @@ function validaRegisto() {
   let senha = document.getElementById("passwordRegistar").value; // tem de ter uma senha
   const statReg = document.getElementById("statusRegistar");
 
-  console.log(email)
-  console.log(senha)
-
-  console.log(`http://localhost:8080/api/gpus/registar`)
-
   fetch(`${urlBase}/registar`, {
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
