@@ -41,22 +41,23 @@ a:visited {
 
 .page-link {
     background-color: rgb(25, 28, 31) !important;
-    color: rgb(160, 160, 160) !important;
+    color: rgb(255, 255, 255) !important;
 }
 
 .page-link:hover {
-    border-color: rgb(255, 255, 255) !important;
+    border-color: rgb(47, 71, 122) !important;
     color: white !important
 }
 
 .page-link:active {
-    border-color: rgb(151, 151, 151) !important;
+    border-color: rgba(151, 151, 151, 0) !important;
     color: white !important;
 }
 
 .dataTables_wrapper {
     padding-top: 25px;
 }
+
 
 .row {
     justify-content: center;
