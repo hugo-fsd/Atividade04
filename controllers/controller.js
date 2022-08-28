@@ -149,7 +149,7 @@ exports.findall = (req, res) => {
 
         $("div.item-container").each((i, element) => {
           const gpuName = $(element).find("a.item-title").text()
-          const price = (Math.round(parseFloat((($(element).find("li.price-current").text().replace("(", "–").replace(",", "").replace("$", "").split("–")[0] * 0.8700) * 100) / 100))).toFixed(0) + " €"
+          const price = (Math.round($(element).find("li.price-current").text()))
           const sellerUrl = "https://www.newegg.com/"
           const url = $(element).find("a.item-title").attr("href")
           const sellerName = "New Egg"
@@ -172,7 +172,7 @@ exports.findall = (req, res) => {
 
         $("li.product_wrapper").each((i, element) => {
           const gpuName = $(element).find("div.normal").text()
-          const price = (Math.round(parseFloat((($(element).find("div.price").text().replace(",", "").replace("$", "") * 0.8700) * 100) / 100))).toFixed(0) + " €"
+          const price = (Math.round(parseFloat((($(element).find("div.price").text().replace(",", "").replace("$", "")))))).toFixed(0) + " €"
           const sellerUrl = "https://www.microcenter.com/"
           const url = sellerUrl + $(element).find("div.normal").children("h2").children("a").attr("href")
           const sellerName = "Micro Center"
@@ -196,7 +196,7 @@ exports.findall = (req, res) => {
         $("li.item").each((i, element) => {
           if ($(element).find("h2.product-name").text().includes("RTX 3")) {
             const gpuName = $(element).find("h2.product-name").text()
-            const price = (Math.round(parseFloat((($(element).find("span.regular-price").text().split(" ")[0].replace(" ", "").replace(/\s/g, '').replace("€", "").replace(",", ".") * 0.8700) * 100) / 100))).toFixed(0) + " €"
+            const price = (Math.round(parseInt((($(element).find("span.regular-price").text().split(" ")[0].replace(" ", "").replace(/\s/g, '').replace("€", "").replace(",", "."))))))+ " €"
             const sellerUrl = "https://www.chiptec.net/"
             const url = $(element).find("a.product-image").attr("href")
             const sellerName = "Chiptec"
